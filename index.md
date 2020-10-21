@@ -1,8 +1,8 @@
 ## Taller demostrativo de uso de MQTT con el ESP32
 
-You can use the [editor on GitHub](https://github.com/fexadom/esp32-mqtt/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+![Imagen](diagrama.png)
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+El objetivo de este taller es demostrar el uso del protocolo de red [MQTT](https://mqtt.org/) para conectar el flujo de información entre dispositivos IoT basados en el microcontrolador [ESP32](https://www.espressif.com/en/products/socs/esp32). La imagen arriba muestra la arquitectura de comunicación objetivo a la que se deberá llegar al final del taller.
 
 ### Markdown
 
