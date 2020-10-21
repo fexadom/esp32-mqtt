@@ -1,8 +1,22 @@
 ## Taller demostrativo de uso de MQTT con el ESP32
 
-![Imagen](diagrama.png)
+![Diagrama](diagrama.png)
 
 El objetivo de este taller es demostrar el uso del protocolo de red [MQTT](https://mqtt.org/) para conectar el flujo de información entre dispositivos IoT basados en el microcontrolador [ESP32](https://www.espressif.com/en/products/socs/esp32). La imagen arriba muestra la arquitectura de comunicación objetivo a la que se deberá llegar al final del taller.
+
+### Paso 1: Sensor de distancia
+
+Usar el módulo [ESP32 WROOM](https://www.sparkfun.com/products/15663) y el sensor de distancia [RFD77402](https://www.sparkfun.com/products/retired/14539) para crear un dispositivo que mida distancia a un objeto con precisión milimétrica. Conectar los módulos como se muestra en la imagen:
+
+![ESP32 y RFD77402](esp32_rfd77402.jpg)
+
+Conectar el dispositivo a la computadora y usando el [Arduino IDE](https://www.arduino.cc/en/main/software) cargar el siguiente programa:
+```C++
+void setup()
+{
+}
+```
+
 
 ### Markdown
 
