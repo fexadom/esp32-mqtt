@@ -11,7 +11,7 @@ Usar el módulo [ESP32 WROOM](https://www.sparkfun.com/products/15663) y el sens
 ![ESP32 y RFD77402](esp32_rfd77402.jpg)
 
 Conectar el dispositivo a la computadora y usando el [Arduino IDE](https://www.arduino.cc/en/main/software) cargar el siguiente programa en el dispositivo:
-```c++
+```Arduino
 #include <SparkFun_RFD77402_Arduino_Library.h>
 
 //Objeto de librería sensor
