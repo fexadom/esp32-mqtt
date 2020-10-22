@@ -10,13 +10,43 @@ Usar el módulo [ESP32 WROOM](https://www.sparkfun.com/products/15663) y el sens
 
 ![ESP32 y RFD77402](esp32_rfd77402.jpg)
 
-Conectar el dispositivo a la computadora y usando el [Arduino IDE](https://www.arduino.cc/en/main/software) cargar el siguiente programa:
+Conectar el dispositivo a la computadora y usando el [Arduino IDE](https://www.arduino.cc/en/main/software) cargar el siguiente programa en el dispositivo:
 ```C++
+#include <SparkFun_RFD77402_Arduino_Library.h>
+
+//Objeto de librería sensor
+RFD77402 myDistance;
+
 void setup()
 {
+  Serial.begin(115200);
+  while (!Serial);
+  Serial.println("Ejemplo uso RFD77402");
+
+  //Inicializa el sensor
+  if (myDistance.begin() == false)
+  {
+    Serial.println("Error al inicializar el sensor. Revisar cables.");
+    while (1); //Freeze!
+  }
+  Serial.println("Sensor online!");
+}
+
+void loop()
+{
+  //Efectua una medición
+  myDistance.takeMeasurement();
+  //Obtiene la medición
+  unsigned int distance = myDistance.getDistance();
+  //Muestre en puerto serial
+  Serial.println(distance);
+  delay(50);
 }
 ```
+Este programa realiza una medición de distancia cada 50 milisegundos, enviando el resultado por el puerto serial. Usar *Serial Monitor* y *Serial Plotter* en el Arduino IDE para revisar las mediciones.
 
+* Para conectar el ESP32 WROOM a su computadora revisar: [ESP32 Thing Plus Hookup Guide](https://learn.sparkfun.com/tutorials/esp32-thing-plus-hookup-guide)
+* Para usar las librerías del RFD77402 revisar: [Qwiic Distance Sensor (RFD77402) Hookup Guide](https://learn.sparkfun.com/tutorials/qwiic-distance-sensor-rfd77402-hookup-guide)
 
 ### Markdown
 
