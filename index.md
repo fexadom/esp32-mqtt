@@ -251,7 +251,7 @@ void loop() {
   }
 }
 ```
-Usar cliente MQTT en el Raspberry Pi para recibir los mensajes que envia el ESP32:
+Usar el cliente MQTT en el Raspberry Pi para suscribirse y mostrar los mensajes que envia el ESP32:
 ```bash
 mosquitto_sub -d -t esp32/data
 ```
@@ -260,4 +260,8 @@ y usar un cliente MQTT para publicar mensajes al ESP32:
 mosquitto_pub -d -t esp32/data -m "Hola!"
 ```
 
-### Reto 1: Publicar datos del sensor de distancia 
+### RETO 1: Publicar datos del sensor de distancia 
+Usando los ejemplos proporcionados en los pasos 1 a 4:
+* Configurar un ESP32 para que publique las mediciones de distancia al tópico *esp32/data*
+* Suscribir un ESP32 al tópico *esp32/data* y reflejar los datos recibidos en la posición de la bolita...
+* **OPCIONAL:** Instalar el App [MQTT Dashboard](https://play.google.com/store/apps/details?id=com.app.vetru.mqttdashboard&hl=en_US&gl=US) en un Smartphone y controlar/visualizar los datos en ambos ESP32...
