@@ -146,7 +146,7 @@ En este paso es necesario configurar al Raspberry Pi como broker MQTT para que s
 * IP del dispositivo
 * Usuario y clave
 
-Usar un cliente SSH como Putty para conectarse a la consola del Raspberry Pi, instalar el  MQTT de la siguiente forma:
+Usar un cliente SSH como *Putty* para conectarse a la consola del Raspberry Pi e instalar [Mosquitto](https://mosquitto.org/) un broker MQTT código abierto de la siguiente forma:
 ```bash
 # Instala mosquitto MQTT
 sudo apt install mosquitto mosquitto-clients
