@@ -11,7 +11,7 @@ Usar el módulo [ESP32 WROOM](https://www.sparkfun.com/products/15663) y el sens
 ![ESP32 y RFD77402](esp32_rfd77402.jpg)
 
 Conectar el dispositivo a la computadora y usando el [Arduino IDE](https://www.arduino.cc/en/main/software) cargar el siguiente programa en el dispositivo:
-```C++
+```c++
 #include <SparkFun_RFD77402_Arduino_Library.h>
 
 //Objeto de librería sensor
@@ -56,7 +56,7 @@ Usar el módulo ESP32 WROOM y el [OLED Transparente](https://www.sparkfun.com/pr
 
 Conectar el dispositivo a la computadora y usando el IDE de Arduino, cargar el siguiente código:
 
-```C++
+```c++
 #include "HyperDisplay_UG2856KLBAG01.h"
 
 #define WIRE_PORT Wire
@@ -158,3 +158,6 @@ Verificar la instalación correcta con:
 mosquitto -v
 ```
 Una vez instalado es posible subscribirse y publicar a topicos a traves del broker usando la IP y el puerto 1883.
+
+### Paso 4: Publicar y Subscribirse a un tópico MQTT desde el ESP32
+TODO
