@@ -145,4 +145,16 @@ Este programa permite mover la bolita en el OLED usando el puerto serial. Desde 
 En este paso es necesario configurar al Raspberry Pi como broker MQTT para que sirva de intermediario entre varios dispositivos IoT. Durante el taller se proporcionará a cada estudiante las credenciales para acceder a los Raspberry Pi:
 * IP del dispositivo
 * Usuario y clave
-Una vez dentro del dispositivo, instalar MQTT de la siguiente forma:
+
+Usar un cliente SSH como Putty para conectarse a la consola del Raspberry Pi, instalar el  MQTT de la siguiente forma:
+```bash
+# Instala mosquitto MQTT
+sudo apt install mosquitto mosquitto-clients
+# Registra a mosquitto como servicio
+sudo systemctl enable mosquitto.service
+```
+Verificar la instalación correcta con:
+```bash
+mosquitto -v
+```
+Una vez instalado es posible subscribirse y publicar a topicos a traves del broker usando la IP y el puerto 1883.
