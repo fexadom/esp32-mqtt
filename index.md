@@ -265,3 +265,9 @@ Usando los ejemplos proporcionados en los pasos 1 a 4:
 * Configurar un ESP32 para que publique las mediciones de distancia al tópico *esp32/data*
 * Suscribir un ESP32 al tópico *esp32/data* y reflejar los datos recibidos en la posición de la bolita...
 * **OPCIONAL:** Instalar el App [MQTT Dashboard](https://play.google.com/store/apps/details?id=com.app.vetru.mqttdashboard&hl=en_US&gl=US) en un Smartphone y controlar/visualizar los datos en ambos ESP32...
+
+### RETO 2: Publicar datos a Ubidots usando Node-RED
+[Ubidots](https://ubidots.com/) es una plataforma para visualizar y distribuir datos de sistemas IoT en la nube. Usando el framework [Node-RED](https://nodered.org/) en el Raspberry se puede procesar y enviar los datos Ubidots para visualizarlos en línea.
+* [Instalar Node-Red en el Raspberry Pi](https://nodered.org/docs/getting-started/raspberrypi)
+* Crear una cuenta en Ubidots, obtener el TOKEN de API para poder recibir requerimiento REST y mensajes MQTT
+* Crear un *flow* en Node-RED para conectar el Raspberry Pi con Ubidots
