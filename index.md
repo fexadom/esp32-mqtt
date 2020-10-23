@@ -6,11 +6,11 @@ El objetivo de este taller es demostrar el uso del protocolo de red [MQTT](https
 
 ### Paso 1: Sensor de distancia
 
-Usar el módulo [ESP32 WROOM](https://www.sparkfun.com/products/15663) y el sensor de distancia [RFD77402](https://www.sparkfun.com/products/retired/14539) para crear un dispositivo que mida distancia a un objeto con precisión milimétrica. Conectar los módulos como se muestra en la imagen:
+Usar el módulo [ESP32 WROOM](https://www.sparkfun.com/products/15663) y el sensor de distancia [RFD77402](https://www.sparkfun.com/products/retired/14539) para crear un dispositivo que mida la distancia a un objeto con precisión milimétrica. Conectar los módulos como se muestra en la imagen:
 
 ![ESP32 y RFD77402](esp32_rfd77402.jpg)
 
-Conectar el dispositivo a la computadora y usando el [Arduino IDE](https://www.arduino.cc/en/main/software) cargar el siguiente programa en el dispositivo:
+Conectar el ESP32 a la computadora y usando el [Arduino IDE](https://www.arduino.cc/en/main/software) cargar el siguiente programa en el dispositivo:
 ```c++
 #include <SparkFun_RFD77402_Arduino_Library.h>
 
@@ -50,11 +50,11 @@ Este programa realiza una medición de distancia cada 50 milisegundos, enviando 
 
 
 ### Paso 2: Display de posición
-Usar el módulo ESP32 WROOM y el [OLED Transparente](https://www.sparkfun.com/products/15173) para mostrar una animación en el dispositivo como se muestra en la imagen:
+Usar el módulo ESP32 y el [OLED Transparente](https://www.sparkfun.com/products/15173) para mostrar una animación en el dispositivo como se muestra en la imagen:
 
 ![ESP32 y OLED](esp32_lcd.jpg)
 
-Conectar el dispositivo a la computadora y usando el IDE de Arduino, cargar el siguiente código:
+Conectar el ESP32 a la computadora y usando el IDE de Arduino, cargar el siguiente código:
 
 ```c++
 #include "HyperDisplay_UG2856KLBAG01.h"
@@ -135,7 +135,7 @@ void loop() {
 }
 ```
 
-Este programa permite mover la bolita en el OLED usando el puerto serial. Desde el Serial Monitor del IDE de Arduino se puede enviar alejar la bolita de la pared con la letra 'd' y acercar a la pared con la letra 'a'.
+Este programa permite mover la bolita en el OLED usando el puerto serial. Desde el *Serial Monitor* del IDE de Arduino se puede enviar caracteres por el puerto serial al dispositivo. Para alejar la bolita de la pared enviar la letra 'd' y para acercar a la pared enviar la letra 'a'.
 
 ![Mover la bolita](mueve_bolita.gif)
 
@@ -146,7 +146,7 @@ En este paso es necesario configurar al Raspberry Pi como broker MQTT para que s
 * IP del dispositivo
 * Usuario y clave
 
-Usar un cliente SSH como *Putty* para conectarse a la consola del Raspberry Pi e instalar [Mosquitto](https://mosquitto.org/) un broker MQTT código abierto de la siguiente forma:
+Usar un cliente SSH como [Putty](https://www.putty.org/) para conectarse a la consola del Raspberry Pi e instalar [Mosquitto](https://mosquitto.org/) un broker MQTT código abierto de la siguiente forma:
 ```bash
 # Instala mosquitto MQTT
 sudo apt install mosquitto mosquitto-clients
@@ -160,7 +160,7 @@ mosquitto -v
 Una vez instalado es posible subscribirse y publicar a topicos a traves del broker usando la IP y el puerto 1883.
 
 ### Paso 4: Publicar y Subscribirse a un tópico MQTT desde el ESP32
-El siguiente código permite que el ESP32 WROOM se subscriba al tópico *esp32/data* y publique, al mismo tópico, lo que lee en el puerto serial:
+El siguiente código permite que el ESP32 se subscriba al tópico *esp32/data* y publique, al mismo tópico, lo que lee en el puerto serial:
 ```c++
 #include <WiFi.h>
 #include <PubSubClient.h>
