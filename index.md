@@ -161,7 +161,7 @@ Una vez instalado es posible subscribirse y publicar a topicos a traves del brok
 
 ### Paso 4: Publicar y Subscribirse a un tópico MQTT desde el ESP32
 El siguiente código permite que el ESP32 WROOM se subscriba al tópico *esp32/data* y publique, al mismo tópico, lo que lee en el puerto serial:
-```C++
+```c++
 #include <WiFi.h>
 #include <PubSubClient.h>
 
@@ -259,3 +259,5 @@ y usar un cliente MQTT para publicar mensajes al ESP32:
 ```bash
 mosquitto_pub -d -t esp32/data -m "Hola!"
 ```
+
+### Reto 1: Publicar datos del sensor de distancia 
