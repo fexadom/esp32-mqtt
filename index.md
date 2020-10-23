@@ -142,5 +142,7 @@ Este programa permite mover la bolita en el OLED usando el puerto serial. Desde 
 * Para usar las librerías del OLED Transparente: [Transparent Graphical OLED Breakout Hookup Guide](https://learn.sparkfun.com/tutorials/transparent-graphical-oled-breakout-hookup-guide)
 
 ### Paso 3: Configurar broker MQTT
-
-TODO
+En este paso es necesario configurar al Raspberry Pi como broker MQTT para que sirva de intermediario entre varios dispositivos IoT. Durante el taller se proporcionará a cada estudiante las credenciales para acceder a los Raspberry Pi:
+* IP del dispositivo
+* Usuario y clave
+Una vez dentro del dispositivo, instalar MQTT de la siguiente forma:
