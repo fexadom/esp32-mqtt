@@ -272,8 +272,8 @@ Usando los ejemplos proporcionados en los pasos 1 a 4:
 * **OPCIONAL:** Instalar el App [MQTT Dashboard](https://play.google.com/store/apps/details?id=com.app.vetru.mqttdashboard&hl=en_US&gl=US) en un Smartphone y controlar/visualizar los datos en ambos ESP32...
 
 ### RETO 2: Publicar datos a Ubidots usando Node-RED
-[Ubidots](https://ubidots.com/) es una plataforma para visualizar y distribuir datos de sistemas IoT en la nube. Usando el framework [Node-RED](https://nodered.org/) en el Raspberry se puede procesar y enviar los datos Ubidots para visualizarlos en línea.
+[Ubidots](https://ubidots.com/) es una plataforma para visualizar y distribuir datos de sistemas IoT en la nube. Usando el framework [Node-RED](https://nodered.org/) en el Raspberry se puede procesar y enviar los datos a Ubidots para visualizarlos en línea.
 * [Instalar Node-Red en el Raspberry Pi](https://nodered.org/docs/getting-started/raspberrypi)
 * Crear una cuenta en Ubidots, obtener el TOKEN de API para poder recibir requerimiento REST y mensajes MQTT
-* Crear un *flow* en Node-RED para conectar el Raspberry Pi con Ubidots [ver ejemplo](https://help.ubidots.com/en/articles/1440402-connect-node-red-with-ubidots)
+* Crear un *flow* en Node-RED para conectar el Raspberry Pi con Ubidots: [ver ejemplo](https://help.ubidots.com/en/articles/1440402-connect-node-red-with-ubidots)
 * El procesamiento de datos podría ser un simple [promedio móvil](https://flows.nodered.org/node/node-red-contrib-moving-average) de los datos de distancia previo su envio a Ubidots
