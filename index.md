@@ -172,11 +172,14 @@ El siguiente código permite que el ESP32 se subscriba al tópico *esp32/data* y
 #define PASSWORD "<Clave WiFi>"
 #define TOPIC "esp32/data"
 
+//Cada dispositivo debe tener un nombre de cliente MQTT único
+#define MQTTCLIENTNAME "ESP32MQTTClient"
+
 char mqttBroker[]  = "<IP MQTT BROKER>";
 char payload[100];
 
-WiFiClient esp32client;
-PubSubClient client(esp32client);
+WiFiClient esp32wificlient;
+PubSubClient client(esp32wificlient);
 
 void setup_wifi() {
   // Conectarse al WiFi
@@ -211,7 +214,7 @@ void reconnect() {
   while (!client.connected()) {
     Serial.print("Conectandose al broker MQTT...");
     // Intento de conección
-    if (client.connect("ESP32Client")) {
+    if (client.connect(MQTTCLIENTNAME)) {
       Serial.println("conectado");
       // Subscripción
       client.subscribe(TOPIC);
@@ -269,6 +272,7 @@ mosquitto_pub -d -t esp32/data -m "Hola!"
 Usando los ejemplos proporcionados en los pasos 1 a 4:
 * Configurar un ESP32 para que publique las mediciones de distancia al tópico *esp32/data*
 * Suscribir un ESP32 al tópico *esp32/data* y reflejar los datos recibidos en la posición de la bolita...
+* **IMPORTANTE:** Asegurarse que cada dispositivo ESP32 este configurado con un nombre de cliente MQTT diferente, para esto modificar la línea `#define MQTTCLIENTNAME "ESP32MQTTClient"`
 * **OPCIONAL:** Instalar el App [MQTT Dashboard](https://play.google.com/store/apps/details?id=com.app.vetru.mqttdashboard&hl=en_US&gl=US) en un Smartphone y controlar/visualizar los datos en ambos ESP32...
 
 ### RETO 2: Publicar datos a Ubidots usando Node-RED
