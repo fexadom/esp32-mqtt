@@ -43,6 +43,8 @@ void loop()
   delay(50);
 }
 ```
+Descargar archivo: [esp32_distancia.ino](https://github.com/fexadom/esp32-mqtt/blob/main/esp32_distancia.ino)
+
 Este programa realiza una medición de distancia cada 50 milisegundos, enviando el resultado por el puerto serial. Usar *Serial Monitor* y *Serial Plotter* en el Arduino IDE para revisar las mediciones.
 
 * Para conectar el ESP32 WROOM a su computadora revisar: [ESP32 Thing Plus Hookup Guide](https://learn.sparkfun.com/tutorials/esp32-thing-plus-hookup-guide)
@@ -134,6 +136,7 @@ void loop() {
   }
 }
 ```
+Descargar archivo: [esp32_display.ino](https://github.com/fexadom/esp32-mqtt/blob/main/esp32_display.ino)
 
 Este programa permite mover la bolita en el OLED usando el puerto serial. Desde el *Serial Monitor* del IDE de Arduino se puede enviar caracteres por el puerto serial al dispositivo. Para alejar la bolita de la pared enviar la letra 'd' y para acercar a la pared enviar la letra 'a'.
 
@@ -251,6 +254,8 @@ void loop() {
   }
 }
 ```
+Descargar archivo: [esp32_mqtt.ino](https://github.com/fexadom/esp32-mqtt/blob/main/esp32_mqtt.ino)
+
 Usar el cliente MQTT en el Raspberry Pi para suscribirse y mostrar los mensajes que envia el ESP32:
 ```bash
 mosquitto_sub -d -t esp32/data
