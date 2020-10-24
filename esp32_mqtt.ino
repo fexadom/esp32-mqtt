@@ -5,11 +5,14 @@
 #define PASSWORD "<Clave WiFi>"
 #define TOPIC "esp32/data"
 
+//Cada dispositivo debe tener un nombre de cliente MQTT único
+#define MQTTCLIENTNAME "ESP32MQTTClient"
+
 char mqttBroker[]  = "<IP MQTT BROKER>";
 char payload[100];
 
-WiFiClient esp32client;
-PubSubClient client(esp32client);
+WiFiClient esp32wificlient;
+PubSubClient client(esp32wificlient);
 
 void setup_wifi() {
   // Conectarse al WiFi
@@ -44,7 +47,7 @@ void reconnect() {
   while (!client.connected()) {
     Serial.print("Conectandose al broker MQTT...");
     // Intento de conección
-    if (client.connect("ESP32Client")) {
+    if (client.connect(MQTTCLIENTNAME)) {
       Serial.println("conectado");
       // Subscripción
       client.subscribe(TOPIC);
